@@ -2,11 +2,11 @@
 const mongoose = require('mongoose')
 const config = require('../config/config')
 
-//const password = encodeURIComponent(config.db.password);
+const password = encodeURIComponent(config.db.password);
 mongoose.Promise = global.Promise
-//const mongoDbUrl = `mongodb://${config.db.username}:${password}@${config.db.serverIp}`
+//const mongoDbUrl = `mongodb://${config.db.username}:${password}@${config.db.serverIP}`
 
-const mongoDbUrl = `mongodb+srv://AppUser:Welcome123@cluster0.csvai8j.mongodb.net/admin?retryWrites=true&w=majority`
+const mongoDbUrl = `mongodb+srv://${config.db.username}:${password}@${config.db.serverIP}`
 mongoose.connect(mongoDbUrl, {
     useNewUrlParser: true
 })

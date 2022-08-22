@@ -5,6 +5,6 @@
     "db": {
         "username": "AppUser",
         "password": "Welcome123",
-        "serverIP": "cluster0.csvai8j.mongodb.net/?retryWrites=true&w=majority"
+        "serverIP": "cluster0.csvai8j.mongodb.net/admin?retryWrites=true&w=majority"
     }
 }

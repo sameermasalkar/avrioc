@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
-const autoIncrement = require('mongoose-auto-increment')
-const connect = require('../database/connect')
+const autoIncrementc = require('mongoose-sequence')
+const connect = require('../database/mongo')
 const connection = connect.db
-autoIncrement.initialize(connection);
+const AutoIncrement = autoIncrementc(connection);
 
 const userSchema = new mongoose.Schema(
   {
@@ -25,10 +25,10 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-userSchema.plugin(autoIncrement.plugin, {
-    model: 'users',
-    field: 'user_id',
-    startAt: 1000
+userSchema.plugin(AutoIncrement, {
+    
+    inc_field: 'user_id',
+    start_seq: 1000
 });
 
 module.exports = mongoose.model("users", userSchema);
