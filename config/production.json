@@ -1,5 +1,10 @@
 {
     "port": {
         "AppPortNumber": "8080"
+    },
+    "db": {
+        "username": "",
+        "password": "",
+        "serverIP": ""
     }
 }
