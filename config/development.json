@@ -1,5 +1,10 @@
 {
     "port": {
         "AppPortNumber": "8080"
+    },
+    "db": {
+        "username": "AppUser",
+        "password": "Welcome123",
+        "serverIP": "cluster0.csvai8j.mongodb.net/?retryWrites=true&w=majority"
     }
 }

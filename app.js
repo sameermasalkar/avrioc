@@ -1,7 +1,9 @@
+"use strict";
 const express = require('express');
 const bodyParser = require('body-parser');
 const http = require('http');
 const config = require("./config/config");
+require('./database/mongo.js');
 
 const app = express();
 
