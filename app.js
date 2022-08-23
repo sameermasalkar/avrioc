@@ -5,6 +5,8 @@ const http = require('http');
 const config = require("./config/config");
 require('./database/mongo.js');
 const userRoutes = require("./routers/users");
+const loginRoutes = require("./routers/login");
+
 
 const app = express();
 
@@ -18,6 +20,9 @@ app.get('/', (req, res) => {
 
 // All Users Routes
 app.use("/", userRoutes);
+
+// All Users Routes
+app.use("/", loginRoutes);
 
 
 //404 or invalid routes

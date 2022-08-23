@@ -17,13 +17,23 @@ const userSchema = new mongoose.Schema(
         type: String
     },
     IsReviewer: {
-        type: Number,
+        type: String,
         enum: ["Y", "N"]
+    },
+    emailid : {
+        type: String, 
+        lowercase: true
+        
+    },
+    password: {
+        type: String
     }
    
   },
   { timestamps: true }
 );
+
+userSchema.index({ emailid: 1 }, { unique: true });
 
 userSchema.plugin(AutoIncrement, {
     

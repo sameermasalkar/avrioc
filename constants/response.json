@@ -1,0 +1,30 @@
+{
+    "noUserFound": {
+        "code": 404,
+        "data" : {
+            "status": "FAIL",
+            "message" : "No such user"
+        }
+    },
+    "credsNotMatch": {
+        "code": 401,
+        "data" : {
+            "status": "FAIL",
+            "message" : "Not Authorised"
+        }
+    },
+    "emailExists": {
+        "code": 409,
+        "data" : {
+            "status": "FAIL",
+            "message" : "Email ID already exists. Please use different email ID"
+        }
+    },
+    "userRegis": {
+        "code": 201,
+        "data" : {
+            "status": "SUCCESS",
+            "message" : "User is registered successfully."
+        }
+    }
+}
