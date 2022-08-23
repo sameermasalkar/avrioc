@@ -11,34 +11,34 @@ exports.addUser = async (req, res, next) => {
     try {
         let rbody = req.body;
 
-         //Check duplicate email id
-         let IsUser = await userModel.findOne({
+        //Check duplicate email id
+        let IsUser = await userModel.findOne({
             emailid: req.body.emailid
-            
+
         }, {
             _id: 1
         })
         console.log("EmailID duplicate check", IsUser)
         if (IsUser) {
-                res.status(Responses.emailExists.code).send(Responses.emailExists.data);
-                return
-            
+            res.status(Responses.emailExists.code).send(Responses.emailExists.data);
+            return
+
         }
 
         rbody.password = bcrypt.hashSync(rbody.password, BCRYPT_SALT_ROUNDS)
 
 
-        let dataSet = await  new userModel(rbody).save()
+        let dataSet = await new userModel(rbody).save()
         if (!dataSet) {
             throw {
                 message: "Error while user registeration"
             }
-        }else{
+        } else {
             res.status(Responses.userRegis.code).send(Responses.userRegis.data);
         }
 
-        
-        
+
+
 
     } catch (error) {
         console.error("User registration catch block:::::", error)

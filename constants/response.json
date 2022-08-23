@@ -10,7 +10,7 @@
         "code": 401,
         "data" : {
             "status": "FAIL",
-            "message" : "Not Authorised"
+            "message" : "Not Authorised. emailid or password dont match"
         }
     },
     "emailExists": {

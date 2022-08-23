@@ -6,5 +6,11 @@
         "username": "AppUser",
         "password": "Welcome123",
         "serverIP": "cluster0.csvai8j.mongodb.net/test?retryWrites=true&w=majority"
+    },
+    "jwt": {
+        "secret" : "App@secure#",
+        "tokenLife": 3600,
+        "refresh_secret" : "RefreshApp@secure#",
+        "refresh_tokenLife" : 86400
     }
 }
