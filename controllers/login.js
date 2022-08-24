@@ -16,10 +16,13 @@ exports.login = async (req, res, next) => {
                 let token_data = {
                     name: userdata.name,
                     emailid: userdata.emailid,
-                    IsReviewer: userdata.IsReviewer
+                    IsReviewer: userdata.IsReviewer,
+                    user_id : userdata.user_id,
+                    isAdmin : userdata.isAdmin
                 }
-                token_data = await mutils.encryptdata(token_data);
-
+                
+                token_data = await mutils.encryptdata(JSON.stringify(token_data));
+                
                 const token = jwt.sign({ tokendata: token_data }, config.jwt.secret, { expiresIn: config.jwt.tokenLife })
                 const Refreshtoken = jwt.sign({ tokendata: token_data }, config.jwt.refresh_secret, { expiresIn: config.jwt.refresh_tokenLife })
 

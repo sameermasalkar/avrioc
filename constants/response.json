@@ -20,11 +20,11 @@
             "message" : "Email ID already exists. Please use different email ID"
         }
     },
-    "userRegis": {
+    "Regis": {
         "code": 201,
         "data" : {
             "status": "SUCCESS",
-            "message" : "User is registered successfully."
+            "message" : "Registeration is successfully. !!"
         }
     }
 }

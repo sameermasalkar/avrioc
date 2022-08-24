@@ -5,10 +5,10 @@ const cryptr = new Cryptr(config.jwt.secret);
 
 
 exports.encryptdata = async (data) => {
-    const encryptedString = cryptr.encrypt('bacon');
+    const encryptedString = cryptr.encrypt(data);
     return encryptedString;
 }
 exports.decryptdata = async (data) => {
-    const decryptedString = cryptr.decrypt(encryptedString);
+    const decryptedString = cryptr.decrypt(data);
     return decryptedString;
 }

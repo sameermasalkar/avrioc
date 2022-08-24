@@ -4,8 +4,8 @@ const bodyParser = require('body-parser');
 const http = require('http');
 const config = require("./config/config");
 require('./database/mongo.js');
-const userRoutes = require("./routers/users");
-const loginRoutes = require("./routers/login");
+
+
 
 
 const app = express();
@@ -18,11 +18,21 @@ app.get('/', (req, res) => {
     res.send({ "message": "Welcome to our api" });
 });
 
-// All Users Routes
-app.use("/", userRoutes);
+
+const requestHandler = require("./service/requestHandler");
+app.all("*", requestHandler);
 
 // All Users Routes
+const userRoutes = require("./routers/users");
+app.use("/", userRoutes);
+
+// All login Routes
+const loginRoutes = require("./routers/login");
 app.use("/", loginRoutes);
+
+// All film Routes
+const filmRoutes = require("./routers/films");
+app.use("/", filmRoutes);
 
 
 //404 or invalid routes

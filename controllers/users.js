@@ -34,7 +34,8 @@ exports.addUser = async (req, res, next) => {
                 message: "Error while user registeration"
             }
         } else {
-            res.status(Responses.userRegis.code).send(Responses.userRegis.data);
+            res.status(Responses.Regis.code).send(Responses.Regis.data);
+            return
         }
 
 
@@ -45,7 +46,7 @@ exports.addUser = async (req, res, next) => {
         res.send({
             status: "FAIL",
             message: error.message,
-            data: error.data
+            data: error
         })
     }
 

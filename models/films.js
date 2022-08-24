@@ -4,46 +4,43 @@ const connect = require('../database/mongo')
 const connection = connect.db
 const AutoIncrement = autoIncrementc(connection);
 
-const userSchema = new mongoose.Schema(
+const filmSchema = new mongoose.Schema(
   {
-    user_id: {
+    film_id: {
         type: Number
     },
-    name: {
+    fname: {
         type: String,
         required: [true, "name is a required Field"]
     },
     description: {
         type: String
     },
-    IsReviewer: {
-        type: String,
-        enum: ["Y", "N"]
-    },
-    emailid : {
-        type: String, 
-        lowercase: true
+    genere: [],
+    rating : {
+        type: Number,
+        default : 0
         
     },
-    password: {
+    release_date: {
         type: String
     },
-    isAdmin:{
-        type: String,
-        default: "N",
-        enum: ["Y", "N"]
+    country: {
+        type: String
     }
    
   },
   { timestamps: true }
 );
 
-userSchema.index({ emailid: 1 }, { unique: true });
 
-userSchema.plugin(AutoIncrement, {
+
+filmSchema.plugin(AutoIncrement, {
     
-    inc_field: 'user_id',
+    inc_field: 'film_id',
     start_seq: 1000
 });
 
-module.exports = mongoose.model("users", userSchema);
+module.exports = mongoose.model("films", filmSchema);
+
+
