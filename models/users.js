@@ -40,6 +40,8 @@ const userSchema = new mongoose.Schema(
 
 userSchema.index({ emailid: 1 }, { unique: true });
 
+userSchema.index({user_id : 1})
+
 userSchema.plugin(AutoIncrement, {
     
     inc_field: 'user_id',

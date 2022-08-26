@@ -33,7 +33,7 @@ const filmSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-
+filmSchema.index({film_id : 1 })
 
 filmSchema.plugin(AutoIncrement, {
     

@@ -29,7 +29,8 @@ const reviewSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-
+reviewSchema.index({film_id : 1});
+reviewSchema.index({review_id : 1});
 
 reviewSchema.plugin(AutoIncrement, {
     

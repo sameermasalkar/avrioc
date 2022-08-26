@@ -25,7 +25,8 @@ const commentSchema = new mongoose.Schema(
     { timestamps: true }
 );
 
-
+commentSchema.index({ film_id : 1})
+commentSchema.index({comment_id : 1})
 
 commentSchema.plugin(AutoIncrement, {
 
