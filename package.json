@@ -1,0 +1,35 @@
+{
+  "name": "avrioc",
+  "version": "1.0.0",
+  "description": "RESTful API to manage films (CRUD Operations)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sameermasalkar/avrioc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sameermasalkar/avrioc/issues"
+  },
+  "homepage": "https://github.com/sameermasalkar/avrioc#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "cryptr": "^6.0.3",
+    "express": "^4.18.1",
+    "express-http-context": "^1.2.4",
+    "helmet": "^5.1.1",
+    "is-empty": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.5.2",
+    "mongoose-sequence": "^5.3.1",
+    "uuid": "^8.3.2",
+    "winston": "^3.8.1",
+    "winston-daily-rotate-file": "^4.7.1"
+  }
+}
