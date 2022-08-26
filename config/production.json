@@ -3,8 +3,14 @@
         "AppPortNumber": "8080"
     },
     "db": {
-        "username": "",
-        "password": "",
-        "serverIP": ""
+        "username": "AppUser",
+        "password": "Welcome123",
+        "serverIP": "cluster0.csvai8j.mongodb.net/test?retryWrites=true&w=majority"
+    },
+    "jwt": {
+        "secret" : "App@secureProd#",
+        "tokenLife": 3600,
+        "refresh_secret" : "RefreshApp@secureProd#",
+        "refresh_tokenLife" : 86400
     }
 }
