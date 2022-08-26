@@ -25,7 +25,7 @@ exports.addReview = async (req, res, next) => {
             rating: 1
         })
 
-        if (!isFilm.length) {
+        if (!isFilm) {
             res.status(Responses.noUserFound.code).send(Responses.noUserFound.data);
             return
 
@@ -78,8 +78,9 @@ exports.updateReview = async (req, res, next) => {
             review_id: req.body.review_id
 
         });
+        
 
-        if (isReview.length > 0) {
+        if (isReview) {
             if (isReview.user_id == req.body.user_id || req.body.isAdmin == "Y") {
 
                 let isFilm = await filmModel.findOne({
@@ -89,8 +90,8 @@ exports.updateReview = async (req, res, next) => {
                     film_id: 1,
                     rating: 1
                 })
-
-                if (!isFilm.length) {
+                
+                if (!isFilm) {
                     res.status(Responses.noUserFound.code).send(Responses.noUserFound.data);
                     return
 
@@ -115,6 +116,7 @@ exports.updateReview = async (req, res, next) => {
                         message: "Error while review registeration"
                     }
                 } else {
+                    appLogger.info("Review  updated for film : " + isReview.film_id)
                     res.status(Responses.Regis.code).send(Responses.Regis.data);
                     return
                 }
@@ -176,7 +178,7 @@ exports.getAllReviewsofFilm = async (req, res, next) => {
 
 exports.getReview = async (req, res, next) => {
     try {
-        appLogger.info("Request to get all reviews for film id: " + req.params.review_id)
+        appLogger.info("Request to get a review for review id: " + req.params.review_id)
 
         let isReview = await reviewModel.find({
             review_id: req.params.review_id
