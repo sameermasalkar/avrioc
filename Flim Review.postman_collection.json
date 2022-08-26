@@ -1,0 +1,311 @@
+{
+	"info": {
+		"_postman_id": "637520ce-995c-4e66-833f-755af853c264",
+		"name": "Flim Review",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "sameer m",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "abcd",
+							"type": "text"
+						},
+						{
+							"key": "IsReviewer",
+							"value": "N",
+							"type": "text"
+						},
+						{
+							"key": "emailid",
+							"value": "sameerm@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Welcome@2",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/user",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "emailid",
+							"value": "sameerm@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Welcome@2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/v1/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "refresh_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbmRhdGEiOiJjOTM3YjU3NWYwNTRiMDJmMzA1ZmI5MzNiYzFhZTc1MDMwNGI0YTg1ZWYwNzBiNzYyMmFhY2VmMWQyNTU1YjkyZTE3OWIzOGI0Y2NhMTk4YjE4ZTQ1NGM5MDljOTc1MzVkNDc1ZTY0NDExZWE1Mzk5Y2EzYTdkMmQwNmRhMzg4MTVmZmI0ODNmYTc4NDBjM2Y4NGJkZDY2MTUzMDRlNjc5NzE1NmY3OTI1MmRhMDVlZjQ2ZTdhZDFlNDdiNWJhY2E2ZTYyOTU3YWQwOTY4ODJjYTk5MDQ3YTlkZGViMjA4Y2MzNmUyNTZmOTIzOGNjODliZWUxZDE5OTQzMjM4MDM5ZGVkZGFiOGEwZmI5YmQ1YjEyZWY4ZTU3M2Y1ZmJmZjEzN2RmODQ4MmM0OWZjNDFlNmFhYzg0OGU1NjU0YjY0MTFmNzI4YWU4MGNiZTg5YWFlOTMzNDJjNzNjZTE4NGNiMTk0NWRiNTZiMWNkN2UxYTY4MTdmYmMxIiwiaWF0IjoxNjYxNDUyNTQ5LCJleHAiOjE2NjE1Mzg5NDl9.3tMFZe20CpZE5ux-jhnI00T5L98bSr3hw2twDH0k950",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/v1/refreshtoken",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"refreshtoken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Film",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbmRhdGEiOiJjYjFjMzU1YzY3NjAwMzRiMDk5YzZhNzdlZGM1NGVhOTc1MmY0N2UwNDcxMjNkYWVlNmQ0OGU4YmMwZTlmZGZmOWZlNmYzMDBhYTVhNGNiOGZiYzg4ZTkzYjg3NWNmNjJhYjUzZGE0OWVhZWUzMWRkNmUyZDNjNWU2MWU5MjVkZjEwYmM3ZWRkMGYyZjJhNmMwMzQ4ODUyOTgwN2JkYWE0OWYxZTNkM2U0ZmMwZmZhMDc0NDU5NzI5NjYzMmViMDhhZjI2OWJjOTA3ZmRmOThiNTUxYzdhNTVkMmQ3NTc2MjE4ZjlmNWI1ZmI1ZDA1ZDk3MjMxNjA4OTVhOWY3ODZjZTI0NjM5MmU3YmJiMDdkNjBmNzU2NzVhYzU5ZmU0NTM5M2QyMDIwMTIyNzE4YmRhNzQ5ZWMzMjdhYjEzZjliZDYyMmU2YmRkMDdiZThmMTBiNDRiOGI0MmM1ZmYwNzI5OTc2MjVmZDM3NTFkMTEwNGFjMWI4OWI4ZTQ1NzM4IiwiaWF0IjoxNjYxNDk1NjczLCJleHAiOjE2NjE0OTkyNzN9.WhEEaCdjSjqhO2qEu64V_H80Ajue7cSrDaUayF_U2rw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fname\": \"xmen\",\n    \"description\": \"scifi movie\",\n    \"genere\": [\"crime\", \"scifi\", \"drama\"],\n    \"release_date\" :\"20-12-2014\",\n    \"country\" : \"USA\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/film",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"film"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Review",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbmRhdGEiOiJiMDI4YzFjODNjMTIzOTk2NzI1NDJjYTk3YmRhZjNkNjk4MmU1NjAzMTJhMDA4ZDFiZGU1ZTRjYmQxMTE4Y2Q2NzRjZTZkZDk3N2YxZGU1MzBjOTZmMGI0NDdkMWE4MDYxMTNjMDdlZTI3M2MzZjU0ZDk1YTA5NTgyZDAwODRhMWJjYmRhMzYxMjRhZTIzNDVlMDE1N2IxMjgwNTMwOWQzYmI1NTg1NGM0NDE0ZmRjYTEyYjMwNjM2NmIxNWI1OTI4MmVhYmE1NmM2MThlNWIxODVmMjdjYzQ2NzkwMzlmZjMyYjA3OWZlNmViYzM0NzJiNDQ2YTA4YmQ4NzMzNDUwNDJjZGFjZjA3ZTNjY2QxYWRhOTA1MmExZWNiM2EyYjIxYmYyNDcwNmJjZWM0YzZhNDg1ZTMwODg5Njg1MGY3NDdkNzVkZDRlNjZlZjU5N2NiZDcxOTU0M2Y0MTQzOTYxMWEwMTJkNTgzY2FlMzViMDg4MDJmOGU5MTFlNmRmIiwiaWF0IjoxNjYxNTAzNDUxLCJleHAiOjE2NjE1MDcwNTF9.i3Ukg22vfMcMsLamxBwd-XctmYbsONAbFFiQRLOywMc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "film_id",
+							"value": "1003",
+							"type": "text"
+						},
+						{
+							"key": "rating",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "review",
+							"value": "It is nice movie",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/v1/review",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"review"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Review",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbmRhdGEiOiJiMDI4YzFjODNjMTIzOTk2NzI1NDJjYTk3YmRhZjNkNjk4MmU1NjAzMTJhMDA4ZDFiZGU1ZTRjYmQxMTE4Y2Q2NzRjZTZkZDk3N2YxZGU1MzBjOTZmMGI0NDdkMWE4MDYxMTNjMDdlZTI3M2MzZjU0ZDk1YTA5NTgyZDAwODRhMWJjYmRhMzYxMjRhZTIzNDVlMDE1N2IxMjgwNTMwOWQzYmI1NTg1NGM0NDE0ZmRjYTEyYjMwNjM2NmIxNWI1OTI4MmVhYmE1NmM2MThlNWIxODVmMjdjYzQ2NzkwMzlmZjMyYjA3OWZlNmViYzM0NzJiNDQ2YTA4YmQ4NzMzNDUwNDJjZGFjZjA3ZTNjY2QxYWRhOTA1MmExZWNiM2EyYjIxYmYyNDcwNmJjZWM0YzZhNDg1ZTMwODg5Njg1MGY3NDdkNzVkZDRlNjZlZjU5N2NiZDcxOTU0M2Y0MTQzOTYxMWEwMTJkNTgzY2FlMzViMDg4MDJmOGU5MTFlNmRmIiwiaWF0IjoxNjYxNTAzNDUxLCJleHAiOjE2NjE1MDcwNTF9.i3Ukg22vfMcMsLamxBwd-XctmYbsONAbFFiQRLOywMc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "review_id",
+							"value": "1007",
+							"type": "text"
+						},
+						{
+							"key": "rating",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "review",
+							"value": "It is very nice movie",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/v1/review",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"review"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all reviews of a Film",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbmRhdGEiOiJiMDI4YzFjODNjMTIzOTk2NzI1NDJjYTk3YmRhZjNkNjk4MmU1NjAzMTJhMDA4ZDFiZGU1ZTRjYmQxMTE4Y2Q2NzRjZTZkZDk3N2YxZGU1MzBjOTZmMGI0NDdkMWE4MDYxMTNjMDdlZTI3M2MzZjU0ZDk1YTA5NTgyZDAwODRhMWJjYmRhMzYxMjRhZTIzNDVlMDE1N2IxMjgwNTMwOWQzYmI1NTg1NGM0NDE0ZmRjYTEyYjMwNjM2NmIxNWI1OTI4MmVhYmE1NmM2MThlNWIxODVmMjdjYzQ2NzkwMzlmZjMyYjA3OWZlNmViYzM0NzJiNDQ2YTA4YmQ4NzMzNDUwNDJjZGFjZjA3ZTNjY2QxYWRhOTA1MmExZWNiM2EyYjIxYmYyNDcwNmJjZWM0YzZhNDg1ZTMwODg5Njg1MGY3NDdkNzVkZDRlNjZlZjU5N2NiZDcxOTU0M2Y0MTQzOTYxMWEwMTJkNTgzY2FlMzViMDg4MDJmOGU5MTFlNmRmIiwiaWF0IjoxNjYxNTAzNDUxLCJleHAiOjE2NjE1MDcwNTF9.i3Ukg22vfMcMsLamxBwd-XctmYbsONAbFFiQRLOywMc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/v1/reviews/1002",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"reviews",
+						"1002"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get review by review ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbmRhdGEiOiJiMDI4YzFjODNjMTIzOTk2NzI1NDJjYTk3YmRhZjNkNjk4MmU1NjAzMTJhMDA4ZDFiZGU1ZTRjYmQxMTE4Y2Q2NzRjZTZkZDk3N2YxZGU1MzBjOTZmMGI0NDdkMWE4MDYxMTNjMDdlZTI3M2MzZjU0ZDk1YTA5NTgyZDAwODRhMWJjYmRhMzYxMjRhZTIzNDVlMDE1N2IxMjgwNTMwOWQzYmI1NTg1NGM0NDE0ZmRjYTEyYjMwNjM2NmIxNWI1OTI4MmVhYmE1NmM2MThlNWIxODVmMjdjYzQ2NzkwMzlmZjMyYjA3OWZlNmViYzM0NzJiNDQ2YTA4YmQ4NzMzNDUwNDJjZGFjZjA3ZTNjY2QxYWRhOTA1MmExZWNiM2EyYjIxYmYyNDcwNmJjZWM0YzZhNDg1ZTMwODg5Njg1MGY3NDdkNzVkZDRlNjZlZjU5N2NiZDcxOTU0M2Y0MTQzOTYxMWEwMTJkNTgzY2FlMzViMDg4MDJmOGU5MTFlNmRmIiwiaWF0IjoxNjYxNTAzNDUxLCJleHAiOjE2NjE1MDcwNTF9.i3Ukg22vfMcMsLamxBwd-XctmYbsONAbFFiQRLOywMc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/v1/review/1002",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"review",
+						"1002"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
