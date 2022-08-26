@@ -3,7 +3,7 @@
         "code": 404,
         "data" : {
             "status": "FAIL",
-            "message" : "No such user"
+            "message" : "No such Data... No Data found"
         }
     },
     "credsNotMatch": {

@@ -33,7 +33,7 @@ const reviewSchema = new mongoose.Schema(
 
 reviewSchema.plugin(AutoIncrement, {
     
-    inc_field: 'film_id',
+    inc_field: 'review_id',
     start_seq: 1000
 });
 

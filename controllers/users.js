@@ -4,9 +4,9 @@ const userModel = require('../models/users')
 const bcrypt = require('bcrypt')
 const BCRYPT_SALT_ROUNDS = bcrypt.genSaltSync(10)
 const Responses = require('../constants/response.json')
+const appLogger = require("../service/appLogger")(module);
 
 exports.addUser = async (req, res, next) => {
-    console.error("Inside user registration");
 
     try {
         let rbody = req.body;
@@ -18,7 +18,8 @@ exports.addUser = async (req, res, next) => {
         }, {
             _id: 1
         })
-        console.log("EmailID duplicate check", IsUser)
+
+        appLogger.error("Duplicate email ID", IsUser)
         if (IsUser) {
             res.status(Responses.emailExists.code).send(Responses.emailExists.data);
             return
@@ -30,6 +31,7 @@ exports.addUser = async (req, res, next) => {
 
         let dataSet = await new userModel(rbody).save()
         if (!dataSet) {
+            appLogger.error("Error while user registeration", dataSet)
             throw {
                 message: "Error while user registeration"
             }
@@ -42,12 +44,14 @@ exports.addUser = async (req, res, next) => {
 
 
     } catch (error) {
-        console.error("User registration catch block:::::", error)
+        //console.error("User registration catch block:::::", error)
+        appLogger.error("User registration catch block:::::", error)
         res.send({
             status: "FAIL",
             message: error.message,
             data: error
         })
+        return
     }
 
 

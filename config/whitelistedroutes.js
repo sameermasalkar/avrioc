@@ -1,15 +1,8 @@
 module.exports = {
     path: [
         "/v1/login",
-        "/v1/user"
+        "/v1/user",
+        "/v1/refreshtoken"
 
-    ],
-    AdminAllowedpath: [
-        "/login",
-        "/register"
-    ],
-    ReviewerAllowedpath: [
-        "/login",
-        "/register"
     ]
 }
